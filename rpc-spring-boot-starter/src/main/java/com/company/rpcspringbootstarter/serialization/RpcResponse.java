@@ -9,29 +9,25 @@ import java.util.Map;
 
 /**
  * @author wei.song
- * @since 2023/1/18 14:59
+ * @since 2023/1/18 15:02
  */
 @Data
 @Builder
-public class RpcRequest implements Serializable {
+public class RpcResponse implements Serializable {
     /**
-     * 服务名称
+     * 状态，调用成功或失败
      */
-    private String serviceName;
+    private String status;
     /**
-     * 方法名称
+     * 返回值对象
      */
-    private String methodName;
+    private Object retValue;
     /**
-     * 请求头
+     * 返回头
      */
     private Map<String, String> headers = Maps.newHashMap();
     /**
-     * 参数类型
+     * 如果失败，返回异常对象
      */
-    private Class<?>[] parameterTypes;
-    /**
-     * 参数
-     */
-    private Object[] parameters;
+    private Exception exception;
 }
