@@ -1,4 +1,4 @@
-package com.company.rpcspringbootstarter.Property;
+package com.company.rpcspringbootstarter.property;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
