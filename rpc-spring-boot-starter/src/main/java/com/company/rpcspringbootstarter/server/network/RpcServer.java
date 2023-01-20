@@ -1,4 +1,4 @@
-package com.company.rpcspringbootstarter.server;
+package com.company.rpcspringbootstarter.server.network;
 
 /**
  * Rpc Service interface
