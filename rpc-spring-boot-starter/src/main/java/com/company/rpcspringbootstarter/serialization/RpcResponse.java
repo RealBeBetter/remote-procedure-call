@@ -30,4 +30,36 @@ public class RpcResponse implements Serializable {
      * 如果失败，返回异常对象
      */
     private Exception exception;
+
+
+    public enum Status {
+        /**
+         * 没有找到
+         */
+        NOT_FOUND("Service not found"),
+
+        /**
+         * 成功
+         */
+        SUCCESS("success"),
+
+        /**
+         * 失败
+         */
+        FAILED("failed"),
+
+        ;
+
+        private final String value;
+
+
+        Status(String value) {
+            this.value = value;
+        }
+
+        public String value() {
+            return value;
+        }
+
+    }
 }
