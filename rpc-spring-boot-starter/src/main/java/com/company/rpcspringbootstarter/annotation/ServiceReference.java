@@ -1,7 +1,5 @@
 package com.company.rpcspringbootstarter.annotation;
 
-import org.springframework.stereotype.Component;
-
 import java.lang.annotation.*;
 
 /**
@@ -10,9 +8,8 @@ import java.lang.annotation.*;
  * @author wei.song
  * @since 2023/1/18 14:23
  */
-@Component
 @Documented
-@Target({ElementType.TYPE})
+@Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ServiceReference {
 
