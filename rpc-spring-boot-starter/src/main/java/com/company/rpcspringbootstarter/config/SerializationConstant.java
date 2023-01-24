@@ -11,6 +11,11 @@ public enum SerializationConstant {
      */
     DEFAULT("java"),
 
+    /**
+     * fastjson，使用 fastjson 库完成序列化
+     */
+    FAST_JSON("fast-json"),
+
     ;
 
     private final String value;

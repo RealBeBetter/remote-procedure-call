@@ -8,6 +8,7 @@ import com.company.rpcspringbootstarter.client.network.NettyRpcClient;
 import com.company.rpcspringbootstarter.listener.DefaultRpcListener;
 import com.company.rpcspringbootstarter.property.RpcProperties;
 import com.company.rpcspringbootstarter.serialization.DefaultMessageProtocol;
+import com.company.rpcspringbootstarter.serialization.FastJsonMessageProtocol;
 import com.company.rpcspringbootstarter.serialization.MessageProtocol;
 import com.company.rpcspringbootstarter.server.network.NettyRpcServer;
 import com.company.rpcspringbootstarter.server.network.RequestHandler;
@@ -61,9 +62,11 @@ public class AutoConfiguration {
     public RequestHandler requestHandler(@Autowired RpcProperties rpcProperties, @Autowired ServiceRegistry serviceRegistry) {
         final String protocol = rpcProperties.getProtocol();
         MessageProtocol messageProtocol = new DefaultMessageProtocol();
-        // 暂时只支持 java 自带的序列化方式，可以自行进行扩展，比如：fastjson 等
+        // 暂时只支持 java 原生、fastjson 方式的序列化方式，可以自行进行扩展
         if (SerializationConstant.DEFAULT.value().equalsIgnoreCase(protocol)) {
             messageProtocol = new DefaultMessageProtocol();
+        } else if (SerializationConstant.FAST_JSON.value().equalsIgnoreCase(protocol)) {
+            messageProtocol = new FastJsonMessageProtocol();
         }
         return new RequestHandler(messageProtocol, serviceRegistry);
     }
