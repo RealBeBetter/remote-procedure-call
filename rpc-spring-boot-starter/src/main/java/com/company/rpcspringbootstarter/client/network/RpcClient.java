@@ -11,7 +11,7 @@ import com.company.rpcspringbootstarter.common.ServiceInterfaceInfo;
 public interface RpcClient {
 
     /**
-     * 发送消息
+     * 发送消息，发起调用
      *
      * @param data                 数据
      * @param serviceInterfaceInfo 服务接口信息

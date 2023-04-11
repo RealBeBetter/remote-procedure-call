@@ -16,6 +16,7 @@ import io.netty.channel.socket.nio.NioSocketChannel;
  * @since 2023/1/23 11:55
  */
 public class NettyRpcClient implements RpcClient {
+
     @Override
     public byte[] sendMessage(byte[] data, ServiceInterfaceInfo serviceInterfaceInfo) throws InterruptedException {
         final String ip = serviceInterfaceInfo.getIp();
