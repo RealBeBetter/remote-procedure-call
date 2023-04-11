@@ -17,8 +17,8 @@ public class ClientChannelHandler extends ChannelInboundHandlerAdapter {
 
     private byte[] response;
 
-    private byte[] data;
-    private CountDownLatch countDownLatch;
+    private final byte[] data;
+    private final CountDownLatch countDownLatch;
 
     public ClientChannelHandler(byte[] data) {
         this.data = data;
